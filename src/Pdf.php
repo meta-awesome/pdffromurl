@@ -42,7 +42,7 @@ class Pdf
             return false;
         }
 
-        $this->url = "{$url}";
+        $this->url = $url;
 
         return $this;
     }
@@ -78,7 +78,7 @@ class Pdf
         }
 
         $command = $this->getCommand();
-        $command->addArg($this->url, $filename, null, true);    // Always escape filename
+        $command->addArg("'{$this->url}'", $filename, null, true);    // Always escape filename
         if (!$command->execute()) {
             $this->_error = $command->getError();
             if (!(file_exists($filename) && filesize($filename) == 0)) {
