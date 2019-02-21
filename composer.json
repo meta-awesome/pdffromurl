@@ -1,0 +1,20 @@
+{
+    "name": "metawesome/pdffromurl",
+    "description": "Create a pdf file from URL with WKHTMLTOPDF",
+    "version": "0.0.1",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Adriano Zavareze Righi",
+            "email": "adriano.righi@meta.com.br"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Metawesome\\PdfFromUrl\\": "src/"
+        }
+    }
+}
