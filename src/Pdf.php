@@ -24,7 +24,7 @@ class Pdf
     /**
      * @var url the url to generate a PDF file
      */
-    public $url;
+    protected $url;
 
     /**
      * @var string the detailed error message. Empty string if none.
@@ -42,7 +42,7 @@ class Pdf
             return false;
         }
 
-        $this->$url = $url;
+        $this->url = "{$url}";
 
         return $this;
     }
@@ -78,7 +78,6 @@ class Pdf
         }
 
         $command = $this->getCommand();
-
         $command->addArg($this->url, $filename, null, true);    // Always escape filename
         if (!$command->execute()) {
             $this->_error = $command->getError();
