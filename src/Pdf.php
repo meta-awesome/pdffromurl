@@ -24,7 +24,7 @@ class Pdf
     /**
      * @var url the url to generate a PDF file
      */
-    protected $url;
+    public $url;
 
     /**
      * @var string the detailed error message. Empty string if none.
@@ -36,13 +36,13 @@ class Pdf
      */
     protected $_isCreated = false;
 
-    public static function fromUrl(string $url)
+    public function fromUrl(string $url)
     {
         if(empty($url)) {
             return false;
         }
 
-        $this->url = $url;
+        $this->$url = $url;
 
         return $this;
     }
